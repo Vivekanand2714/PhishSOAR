@@ -1,0 +1,39 @@
+# ── Secrets & Credentials ──────────────────────────────────
+.env
+credentials.json
+token.json
+token_gmail_*.json
+outlook_token.json
+
+# ── Google OAuth Client Secret (root level) ─────────────────
+client_secret_*.json
+
+# ── Runtime / Generated Files ───────────────────────────────
+*.db
+quarantine_log.json
+reports/
+server.log
+server.err.log
+
+# ── Python Cache ─────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# ── Virtual Environments ─────────────────────────────────────
+venv/
+env/
+.venv/
+.env/
+
+# ── OS Files ─────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── IDE ───────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.user
