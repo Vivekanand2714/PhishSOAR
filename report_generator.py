@@ -64,7 +64,7 @@ def generate_report(
 
 def _build_ticket(email_data, iocs, enrichment, triage, response_log, elapsed_sec, gemma_advisory):
     """Build structured JSON incident ticket."""
-    ticket_id = f"SOAR-{datetime.now(timezone.utc).strftime('%Y%m%d')}-{str(uuid.uuid4())[:8].upper()}"
+    ticket_id = f"PhishSOAR-{datetime.now(timezone.utc).strftime('%Y%m%d')}-{str(uuid.uuid4())[:8].upper()}"
 
     return {
         "ticket_id":    ticket_id,
@@ -113,9 +113,9 @@ def _build_ticket(email_data, iocs, enrichment, triage, response_log, elapsed_se
         "gemma_advisory": gemma_advisory,
 
         "playbook": {
-            "name":    "SOAR-Phishing-Response-v1",
+            "name":    "PhishSOAR-v1",
             "version": "1.0.0",
-            "team":    "FoSC 23CSE313 Hackathon",
+            "team":    "Amrita Vishwa Vidyapeetham",
         }
     }
 
@@ -273,7 +273,7 @@ def _render_html_report(ticket: dict) -> str:
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SOAR Incident Report — {ticket['ticket_id']}</title>
+<title>PhishSOAR Incident Report — {ticket['ticket_id']}</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
   :root {{
@@ -336,7 +336,7 @@ def _render_html_report(ticket: dict) -> str:
     <div class="logo">
       <div class="logo-icon">🛡️</div>
       <div class="logo-text">
-        <h1>SOAR Phishing Response</h1>
+        <h1>PhishSOAR — Phishing Detection Report</h1>
         <p>Security Orchestration, Automation & Response</p>
       </div>
     </div>
@@ -414,7 +414,7 @@ def _render_html_report(ticket: dict) -> str:
   </div>
 
   <div class="footer">
-    SOAR Phishing Response Playbook v1.0 &nbsp;•&nbsp; FoSC 23CSE313 Hackathon &nbsp;•&nbsp;
+    PhishSOAR v1.0 &nbsp;•&nbsp; Amrita Vishwa Vidyapeethamn &nbsp;•&nbsp;
     MITRE ATT&CK® T1566 | T1598 &nbsp;•&nbsp; Processed in {ticket['elapsed_sec']}s
   </div>
 </div>

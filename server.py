@@ -1,5 +1,5 @@
 """
-SOAR Dashboard Server — Final version with working static file serving
+PhishSOAR Dashboard Server — Final version with working static file serving
 """
 
 import os, sys, json, threading, webbrowser, logging
@@ -214,7 +214,7 @@ def api_list_reports():
 if __name__ == "__main__":
     print(f"""
 +------------------------------------------------------+
-|        SOAR Phishing Playbook Dashboard              |
+|              PhishSOAR Dashboard                     |
 |  Open in browser -> http://localhost:{FLASK_PORT}           |
 +------------------------------------------------------+
 """)

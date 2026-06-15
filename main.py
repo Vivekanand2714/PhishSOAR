@@ -1,5 +1,5 @@
 """
-SOAR Playbook Orchestrator
+PhishSOAR — Phishing Detection & Classification Orchestrator
 ===========================
 Main entry point — orchestrates the full phishing response pipeline.
 Runs all 5 modules in sequence and tracks execution state.
@@ -36,7 +36,7 @@ logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
     datefmt="%H:%M:%S"
 )
-logger = logging.getLogger("SOAR")
+logger = logging.getLogger("PhishSOAR")
 
 # Shared state for web dashboard (thread-safe)
 PLAYBOOK_STATE = {
@@ -171,7 +171,7 @@ def run_playbook(
         # ═══════════════════════════════════════════════════════
         update_state("ingestion", "running")
         logger.info("=" * 60)
-        logger.info("SOAR PHISHING PLAYBOOK — STARTING")
+        logger.info("PhishSOAR — PHISHING DETECTION STARTING")
         logger.info("=" * 60)
 
         if use_demo:
@@ -683,7 +683,7 @@ def run_mail_monitoring_worker(gmail_service=None, outlook_service=None, source=
 # ─────────────────────────────────────────────────────────────
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="SOAR Phishing Response Playbook",
+        description="PhishSOAR — Real-time Phishing Detection & Classification",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:

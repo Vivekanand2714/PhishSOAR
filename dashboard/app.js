@@ -1,5 +1,5 @@
 /* ============================================================
-   SOAR Dashboard — Frontend JavaScript
+   PhishSOAR Dashboard — Frontend JavaScript
    Polls /api/status every second and updates UI in real-time
    ============================================================ */
 
@@ -113,7 +113,7 @@ function switchView(view) {
   document.querySelector(`.nav-item[data-view="${view}"]`)?.classList.add("active");
 
   const titles = {
-    dashboard:  ["Playbook Dashboard",    "MITRE ATT&CK T1566 • T1598"],
+    dashboard:  ["PhishSOAR Dashboard",    "MITRE ATT&CK T1566 • T1598"],
     iocs:       ["IoC Explorer",          "Extracted Indicators of Compromise"],
     reports:    ["Incident Reports",      "Generated tickets and HTML reports"],
     mitre:      ["MITRE ATT&CK Coverage", "Technique mapping for phishing response"],
@@ -165,7 +165,7 @@ async function triggerPlaybook(source = "demo") {
     startPolling();
   } catch (e) {
     document.getElementById("loading-overlay").classList.add("hidden");
-    alert("Cannot connect to SOAR server. Make sure server.py is running.");
+    alert("Cannot connect to PhishSOAR server. Make sure server.py is running.");
     enableAllButtons();
   }
 }
@@ -203,7 +203,7 @@ async function pollStatus() {
     }
   } catch (e) {
     // Server not running — show hint
-    console.warn("SOAR server not reachable:", e);
+    console.warn("PhishSOAR server not reachable:", e);
   }
 }
 
@@ -782,7 +782,7 @@ async function selectMail(emailId) {
       <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px;">
         <div class="intel-item ${tagClass}" style="padding:8px 12px; text-align:center;">
           <div class="intel-count" style="font-size:1.1rem; text-transform: uppercase;">${mail.verdict}</div>
-          <div class="intel-label" style="font-size:0.6rem;">SOAR Verdict</div>
+          <div class="intel-label" style="font-size:0.6rem;">PhishSOAR Verdict</div>
         </div>
         <div class="intel-item" style="padding:8px 12px; text-align:center; background:var(--surface3); border-color:var(--border);">
           <div class="intel-count" style="font-size:1.1rem; color:var(--text);">${mail.score}/100</div>

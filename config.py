@@ -1,5 +1,5 @@
 # ============================================================
-# SOAR Playbook - Configuration
+# PhishSOAR — Configuration
 # ============================================================
 import os
 from dotenv import load_dotenv
